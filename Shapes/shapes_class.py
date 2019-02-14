@@ -1,7 +1,10 @@
+from random import randint
+
+
 class Point:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+    def __init__(self, x=None, y=None):
+        self.x = x if x else randint(0, 1000)
+        self.y = y if y else randint(0, 1000)
 
 
 class Line:

@@ -1,10 +1,10 @@
-from shapes_class import *
+from Shapes.shapes_class import *
 
 if __name__ == "__main__":
-    point1 = Point(2, 0)
-    point2 = Point(2, 2)
-    point3 = Point(4, 0)
-    point4 = Point(2, 0)
+    point1 = Point()
+    point2 = Point()
+    point3 = Point()
+    point4 = Point()
     line1 = Line(point1, point2)
     line2 = Line(point3, point4)
     square = SquareShape(line1, line2)
