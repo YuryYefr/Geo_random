@@ -10,9 +10,11 @@ if __name__ == "__main__":
     square = SquareShape(line1, line2)
     triangle = TriangleShape(line1, line2)
     circle = CircleShape(line1)
-    print("1.Circle\n"
-          "2.Triangle\n"
-          "3.Square\n")
+    user_ask = input("Would you like to proceed with one figure or join the darkside with random? Y or N: ").lower()
+    if user_ask == "n":
+        print("1.Circle\n"
+              "2.Triangle\n"
+              "3.Square\n")
     user_input = int(input("choose figure"))
     if user_input == 1:
         print(circle.get_square())

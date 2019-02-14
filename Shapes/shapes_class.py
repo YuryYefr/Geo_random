@@ -1,16 +1,23 @@
 from random import randint
-
+from string import ascii_uppercase
 
 class Point:
     def __init__(self, x=None, y=None):
         self.x = x if x else randint(0, 1000)
         self.y = y if y else randint(0, 1000)
 
+    def __str__(self,):
+        return f'{self.x}, {self.y}'
+
 
 class Line:
     def __init__(self, p1, p2):
         self.p1 = p1
         self.p2 = p2
+
+    def __str__(self):
+
+        return f'A({self.p1}), B({self.p2})'
 
     def is_valid(self):
         if self.p1.x == self.p2.x and self.p1.y == self.p2.y:
@@ -21,6 +28,14 @@ class BaseShape:
     def __init__(self, *args):
         self.points = [i for i in args]
         self.lines = [(a, b) for a, b in self.points]
+
+    def __str__(self):
+        point_strings = [str(p) for p in self.points]
+        points_with_letter = []
+        for idx, p in enumerate(point_strings):
+            points_with_letter.append((ascii_uppercase[idx]+p))
+        result = ','.join(points_with_letter)
+        return result
 
     def add_point(self, point):
         self.points.append(point)
