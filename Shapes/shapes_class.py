@@ -6,7 +6,7 @@ class Point:
         self.x = x if x else randint(0, 1000)
         self.y = y if y else randint(0, 1000)
 
-    def __str__(self,):
+    def __str__(self):
         return f'{self.x}, {self.y}'
 
 
