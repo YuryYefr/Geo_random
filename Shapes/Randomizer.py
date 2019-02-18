@@ -35,17 +35,17 @@ class RandoMizer:
         circleshape_counter = 0
         inval_circleshape_counter = 0
         for val in figures:
-            if val is TriangleShape:
+            if isinstance(val, TriangleShape):
                 if val.is_valid():
                     triangle_counter += 1
                 else:
                     inval_triangle_counter += 1
-            if val is SquareShape:
+            if isinstance(val, SquareShape):
                 if val.is_valid():
                     squareshape_counter += 1
                 else:
                     inval_squareshape_counter += 1
-            if val is CircleShape:
+            if isinstance(val, CircleShape):
                 if val.is_valid():
                     circleshape_counter += 1
                 else:
@@ -60,8 +60,8 @@ class RandoMizer:
                  "invalid Circleshape": inval_circleshape_counter
                  }
         end_prog = dt.datetime.now()
-        elapsed_time = end_prog - start_now
-        print(f"Starting programm at \t\t\t{start_now}")
+        elapsed_time = (end_prog - start_now).microseconds;
+        print("Starting programm at \t\t\t", start_now)
         print(total)
-        print(f"Program finished in \t\t\t{end_prog}")
-        print(f"Time needed to execute \t\t\t{elapsed_time}")
+        print("Program finished in \t\t\t", end_prog)
+        print("Time needed to execute \t\t\t", elapsed_time)
