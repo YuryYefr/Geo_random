@@ -60,7 +60,7 @@ class RandoMizer:
                  "invalid Circleshape": inval_circleshape_counter
                  }
         end_prog = dt.datetime.now()
-        elapsed_time = (end_prog - start_now).microseconds;
+        elapsed_time = (end_prog - start_now).microseconds
         print("Starting programm at \t\t\t", start_now)
         print(total)
         print("Program finished in \t\t\t", end_prog)
