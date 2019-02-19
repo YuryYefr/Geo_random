@@ -20,10 +20,13 @@ def run_prog():
         user_input = int(input("choose figure"))
         if user_input == 1:
             print(circle.get_square())
+            exit()
         elif user_input == 2:
             print(triangle.get_square())
+            exit()
         elif user_input == 3:
             print(square.get_square())
+            exit()
         else:
             exit("shutting down the program")
     elif user_ask == "y":
