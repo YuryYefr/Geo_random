@@ -3,20 +3,24 @@ from string import ascii_uppercase
 
 
 class Point:
+    """basic coordinates for classes"""
     def __init__(self, x=None, y=None):
         self.x = x if x else randint(0, 1000)
         self.y = y if y else randint(0, 1000)
 
     def __str__(self):
+        """formatting our inbound numbers"""
         return f'{self.x}, {self.y}'
 
 
 class Line:
+    """activates when two points created"""
     def __init__(self, p1, p2):
         self.p1 = p1
         self.p2 = p2
 
     def __str__(self):
+        """formatting our inbound numbers"""
         return f'A({self.p1}), B({self.p2})'
 
     def isValid(self):
@@ -24,11 +28,13 @@ class Line:
 
 
 class BaseShape:
+    """parent class for our program"""
     def __init__(self, *args):
         self.points = [i for i in args]
         self.lines = []
 
     def __str__(self):
+        """formatting our inbound numbers"""
         point_strings = [str(p) for p in self.points]
         points_with_letter = []
         for idx, p in enumerate(point_strings):
@@ -48,6 +54,7 @@ class BaseShape:
 
 
 class TriangleShape(BaseShape):
+    """creating first class"""
     def __init__(self, a, h):
         super().__init__()
         self.a = a
@@ -59,6 +66,7 @@ class TriangleShape(BaseShape):
 
 
 class CircleShape(BaseShape):
+    """creating second class"""
     def __init__(self, a):
         super().__init__()
         self.a = a
@@ -70,6 +78,7 @@ class CircleShape(BaseShape):
 
 
 class SquareShape(BaseShape):
+    """creating third class"""
     def __init__(self, a, b):
         super().__init__()
         self.b = b

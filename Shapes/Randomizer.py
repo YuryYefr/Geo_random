@@ -4,10 +4,12 @@ import datetime as dt
 
 
 class RandoMizer:
+    """new class for working with user choice in logic module"""
     def __init__(self):
         pass
 
     def generate_figures(self, some_num):
+        """here we input some random numbers and creating a figures """
         figures = []
         while some_num > 0:
             shapes = (CircleShape, SquareShape, TriangleShape)
@@ -27,6 +29,7 @@ class RandoMizer:
         return figures
 
     def define_fig(self, figures):
+        """this method defines figures and count them"""
         start_now = dt.datetime.now()
         triangle_counter = 0
         inval_triangle_counter = 0

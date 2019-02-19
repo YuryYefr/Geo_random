@@ -2,6 +2,7 @@ from Shapes.shapes_class import *
 
 
 def run_prog():
+    """our main logic module"""
     point1 = Point()
     point2 = Point()
     point3 = Point()
