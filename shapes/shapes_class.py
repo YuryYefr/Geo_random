@@ -4,9 +4,15 @@ from string import ascii_uppercase
 
 class Point:
     """basic coordinates for classes"""
+
     def __init__(self, x=None, y=None):
         self.x = x if x else randint(0, 1000)
         self.y = y if y else randint(0, 1000)
+
+    def __eq__(self, other):
+        assert isinstance(other, Point)
+        result = (self.x == other.x and self.y == other.y)
+        return result
 
     def __str__(self):
         """formatting our inbound numbers"""
@@ -15,6 +21,7 @@ class Point:
 
 class Line:
     """activates when two points created"""
+
     def __init__(self, p1, p2):
         self.p1 = p1
         self.p2 = p2
@@ -24,11 +31,14 @@ class Line:
         return f'A({self.p1}), B({self.p2})'
 
     def isValid(self):
-        return self.p1.x != self.p2.x and self.p1.y != self.p2.y
+        # return self.p1.x != self.p2.x and self.p1.y != self.p2.y
+        if self.p1 == self.p2:
+            raise Exception('invalid point')
 
 
 class BaseShape:
     """parent class for our program"""
+
     def __init__(self, *args):
         self.points = [i for i in args]
         self.lines = []
@@ -55,6 +65,7 @@ class BaseShape:
 
 class TriangleShape(BaseShape):
     """creating first class"""
+
     def __init__(self, a, h):
         super().__init__()
         self.a = a
@@ -67,6 +78,7 @@ class TriangleShape(BaseShape):
 
 class CircleShape(BaseShape):
     """creating second class"""
+
     def __init__(self, a):
         super().__init__()
         self.a = a
@@ -79,6 +91,7 @@ class CircleShape(BaseShape):
 
 class SquareShape(BaseShape):
     """creating third class"""
+
     def __init__(self, a, b):
         super().__init__()
         self.b = b
