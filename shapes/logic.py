@@ -19,7 +19,8 @@ def run_prog():
           "1.one figure\n"
           "2.figures with random points\n"
           "3.to store\n"
-          "4.to restore")
+          "4.to restore\n"
+          )
     user_input = int(input("your answer is: "))
 
     if user_input == 1:

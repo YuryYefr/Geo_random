@@ -3,6 +3,7 @@ import random
 import datetime as dt
 
 
+
 class RandoMizer:
     """new class for working with user choice in logic module"""
 
@@ -16,17 +17,21 @@ class RandoMizer:
             shapes = (CircleShape, SquareShape, TriangleShape)
             figure = random.choice(shapes)
             if figure is TriangleShape:
+
                 line1 = Line(Point(), Point())
                 line2 = Line(Point(), Point())
                 figures.append(TriangleShape(line1, line2))
             elif figure is SquareShape:
+
                 line1 = Line(Point(), Point())
                 line2 = Line(Point(), Point())
                 figures.append(SquareShape(line1, line2))
             else:
+
                 line = Line(Point(), Point())
                 figures.append(CircleShape(line))
             some_num -= 1
+
         return figures
 
     def define_fig(self, figures):

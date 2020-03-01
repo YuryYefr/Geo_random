@@ -1,4 +1,5 @@
-from shapes.logic import run_prog
+from shapes.logic import *
+
 if __name__ == "__main__":
     """here our program starts
     first calling logic to choose functionality
